@@ -18,8 +18,8 @@
     .m-div table{
         border:none;
     }
-    .m-div tr:nth-child(even){
-        border-bottom: solid 1px #fff;
+    .m-item{
+
     }
     .m-div tr{
         padding-bottom:10px;
@@ -45,6 +45,8 @@
     }
     .m-btns{
         margin-bottom:15px;
+        border-bottom: solid 1px #fff;
+        padding-bottom:10px;
     }
 
     a.m-btn {

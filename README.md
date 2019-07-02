@@ -1,4 +1,6 @@
 # Church Song Board
+~Current Version:1.2~
+
 Wordpress plugin to display upcoming music and links to their 
 video and lyrics.
 

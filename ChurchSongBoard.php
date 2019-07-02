@@ -26,6 +26,11 @@ class ChurchSongBoard
             &$this,
             'menu_items',
         ]);
+
+        add_action('init', [
+            &$this,
+            'updater',
+        ]);
         wp_enqueue_style('style-main', plugin_dir_url(__FILE__).'css/style.css', FALSE);
 
         add_shortcode('mboard', [
@@ -106,12 +111,14 @@ class ChurchSongBoard
     function church_song_board()
     {
         global $wpdb;
-        $table = CMB_TABLE;
-        $today = date('Y-m-d').' 00:00:00';
-        $m_boards = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}{$table} GROUP BY DATE(event_date)");
 
-        $content ='';
-        if(!empty($m_boards)) {
+        $today = date('Y-m-d').' 00:00:00';
+
+        $songs = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.CMB_TABLE.' WHERE event_date > \''.$today.'\'  ORDER BY sort_order ASC, event_date ASC');
+
+        $content = '';
+
+        if(!empty($songs)) {
             ob_start();
             include plugin_dir_path(__FILE__).'views/board.php';
             $content = ob_get_clean();
@@ -134,7 +141,7 @@ class ChurchSongBoard
                 'sort_order' => sanitize_text_field($_POST['sort_order']),
             ]);
 
-            if($wpdb->rows_affected >0) {
+            if($wpdb->rows_affected > 0) {
                 $done = TRUE;
             }
         }
@@ -149,7 +156,7 @@ class ChurchSongBoard
                 'lyrics'     => sanitize_text_field($_POST['lyrics']),
                 'sort_order' => sanitize_text_field($_POST['sort_order']),
             ], ['id' => sanitize_text_field($_GET['song'])]);
-            if($wpdb->rows_affected >0) {
+            if($wpdb->rows_affected > 0) {
                 $done = TRUE;
             }
         }
@@ -190,6 +197,31 @@ class ChurchSongBoard
     {
         global $wpdb;
         $wpdb->query("DROP TABLE IF EXISTS ".$wpdb->prefix.CMB_TABLE);
+    }
+
+    function updater()
+    {
+        include_once plugin_dir_path(__FILE__).'lib/updater.php';
+
+        define('WP_GITHUB_FORCE_UPDATE', TRUE);
+
+        if(is_admin()) {
+            $config = [
+                'slug'               => plugin_basename(__FILE__),
+                'proper_folder_name' => 'church-song-board',
+                'api_url'            => 'https://api.github.com/repos/jgmuchiri/church-song-board',
+                'raw_url'            => 'https://raw.github.com/jgmuchiri/church-song-board/master',
+                'github_url'         => 'https://github.com/jgmuchiri/church-song-board',
+                'zip_url'            => 'https://github.com/jgmuchiri/church-song-board/archive/master.zip',
+                'sslverify'          => TRUE,
+                'requires'           => '1.0',
+                'tested'             => '1.2',
+                'readme'             => 'README.md',
+                'access_token'       => '',
+            ];
+
+            new WP_GitHub_Updater($config);
+        }
     }
 }
 
