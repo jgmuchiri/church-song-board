@@ -108,10 +108,14 @@ class ChurchSongBoard
         global $wpdb;
         $table = CMB_TABLE;
         $today = date('Y-m-d').' 00:00:00';
-        ob_start();
         $m_boards = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}{$table} GROUP BY DATE(event_date)");
-        include plugin_dir_path(__FILE__).'views/board.php';
-        $content = ob_get_clean();
+
+        $content ='';
+        if(!empty($m_boards)) {
+            ob_start();
+            include plugin_dir_path(__FILE__).'views/board.php';
+            $content = ob_get_clean();
+        }
         return $content;
     }
 

@@ -15,7 +15,7 @@
                 <tr>
                     <td>
                         <div class="m-title">
-                            <?php echo $key + 1; ?> <?php echo $board->title; ?>
+                            <?php echo $key + 1; ?>. <?php echo $board->title; ?>
                             <?php if(!empty($board->author)): ?>
                                 <span class="m-author">by <?php echo $board->author; ?></span>
                             <?php endif; ?>
