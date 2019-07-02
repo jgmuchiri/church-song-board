@@ -3,9 +3,9 @@
 /*
 Plugin Name: Church Song Board
 Plugin URI: https://johnmuchiri.com
-Description: Church Song board
+Description: Church song board
 Author: John Muchiri
-Version: 1.0
+Version: 1.3
 Author URI: https://johnmuchiri.com
 */
 
