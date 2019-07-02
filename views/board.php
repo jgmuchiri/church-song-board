@@ -1,3 +1,8 @@
+<div class="row text-center">
+    <div class="col-sm-12 m-heading">
+        Weekly Music Board
+    </div>
+</div>
 <div class="m-div">
     <div class="m-bg-image"></div>
     <div class="m-bg-text">
