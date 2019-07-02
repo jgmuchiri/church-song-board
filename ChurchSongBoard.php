@@ -92,8 +92,8 @@ class ChurchSongBoard
 
         add_submenu_page(
             'ChurchSongBoard',
-            'New Board',
-            'New board',
+            'New Song',
+            'New Song',
             'manage_options',
             'New_church_song_board',
             [
