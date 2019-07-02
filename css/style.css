@@ -1,0 +1,109 @@
+    @import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+    @import 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
+
+    .m-div {
+        width: 600px;
+        height: 400px;
+        font-family: 'Roboto', sans-serif;
+        position:relative;
+    }
+    .m-div table{
+        border:none;
+    }
+    .m-div tr:nth-child(even){
+        border-bottom: solid 1px #fff;
+    }
+    .m-div tr{
+        padding-bottom:10px;
+    }
+    .m-div table td{
+        padding:0;
+        border:none;
+
+        margin-bottom:10px;
+    }
+
+    .m-title {
+        color: #fff;
+        text-shadow: 2px 2px #333;
+        font-size: 20px;
+        margin-top:10px;
+    }
+
+    .m-author {
+        color: #fff;
+        font-size: 12px;
+        text-shadow: 2px 2px #333;
+    }
+    .m-btns{
+        margin-bottom:15px;
+    }
+
+    a.m-btn {
+        padding: 3px 15px;
+        margin: 0 0.1em 0.1em 0;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: #FFFFFF !important;
+        text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+        text-align: center;
+        transition: all 0.2s;
+        text-decoration: none !important;
+    }
+
+    a.m-btn:hover {
+        border-color: rgba(255, 255, 255, 1);
+    }
+
+    a.m-video-btn {
+        background-color: #f14e4e;
+        border: 1px solid #f16a71;
+    }
+
+    a.m-lyrics-btn {
+        background-color: #4e9af1;
+        border: 1px solid #69a2f1;
+    }
+
+    @media all and (max-width:30em) {
+        a.m-btn {
+            display: block;
+            margin: 0.2em auto;
+        }
+    }
+
+    .fa {
+        font-size: 20px;
+    }
+
+    .m-div h4{
+        color:#fff;
+        text-shadow: 0 0.04em 0.04em #000;
+    }
+
+    .m-bg-image {
+        background-image: url("../img/guitar.jpg");
+        filter: blur(4px);
+        -webkit-filter: blur(4px);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .m-bg-text {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 90%;
+        padding: 20px;
+
+        height:90%;
+        overflow-y:auto;
+    }
