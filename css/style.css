@@ -1,6 +1,9 @@
     @import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
     @import 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
 
+    .m-table tr{
+        border-bottom:none !important;
+    }
     .text-center{
         text-align: center;
     }
@@ -8,6 +11,7 @@
         font-family: 'Roboto', sans-serif;
         font-size:28px;
         text-transform: uppercase;
+        margin-top:45px;
     }
     .m-div {
         width: 100%;
@@ -16,26 +20,23 @@
         position:relative;
     }
     .m-div table{
-        border:none;
-    }
-    .m-item{
-
+        border:none !important;
     }
     .m-div tr{
-        padding-bottom:10px;
+        padding-bottom:10px !important;
     }
     .m-div table td{
         padding:0;
         border:none;
-
-        margin-bottom:10px;
+        margin-bottom:10px !important;
     }
 
     .m-title {
         color: #fff;
         text-shadow: 2px 2px #333;
-        font-size: 20px;
-        margin-top:10px;
+        font-size: 24px;
+        margin-top:15px !important;
+        padding-bottom: 15px;
     }
 
     .m-author {
@@ -46,11 +47,11 @@
     .m-btns{
         margin-bottom:15px;
         border-bottom: solid 1px #fff;
-        padding-bottom:10px;
+        padding-bottom:15px;
     }
 
     a.m-btn {
-        padding: 3px 15px;
+        padding: 5px 20px !important;
         margin: 0 0.1em 0.1em 0;
         border-radius: 10px;
         box-sizing: border-box;
@@ -89,10 +90,13 @@
     }
 
     .m-div h4{
-        color:#fff;
+        color:#ffeb3b;
         text-shadow: 0 0.04em 0.04em #000;
     }
 
+    .m-date{
+        padding-bottom:10px !important;
+    }
     .m-bg-image {
         background-image: url("../img/guitar.jpg");
         filter: blur(4px);

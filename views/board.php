@@ -1,23 +1,24 @@
-<div class="row text-center">
-    <div class="col-sm-12 m-heading">
-        Weekly Music Board
-    </div>
+<div class="m-heading">
+    Weekly Music Board
 </div>
+
 <div class="m-div">
     <div class="m-bg-image"></div>
     <div class="m-bg-text">
 
         <?php $curr = NULL; ?>
-        <table class="">
+        <table class="m-table">
             <?php foreach ($songs as $key => $song): ?>
-                <tr class="m-date">
+                <tr>
                     <td colspan="1">
-                        <?php
-                        if(date('Y-m-d', strtotime($song->event_date)) !== $curr) {
-                            $curr = date('Y-m-d',strtotime($song->event_date));
-                            echo '<h4>'.date('d M, Y', strtotime($song->event_date)).'</h4>';
-                        }
-                        ?>
+                       <div class="m-date">
+                           <?php
+                           if(date('Y-m-d', strtotime($song->event_date)) !== $curr) {
+                               $curr = date('Y-m-d', strtotime($song->event_date));
+                               echo '<h4>'.date('d M, Y', strtotime($song->event_date)).'</h4>';
+                           }
+                           ?>
+                       </div>
                     </td>
                 </tr>
                 <tr>
