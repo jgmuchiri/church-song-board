@@ -5,7 +5,7 @@ Plugin Name: Church Song Board
 Plugin URI: https://johnmuchiri.com
 Description: Church song board
 Author: John Muchiri
-Version: 1.4
+Version: 1.5
 Author URI: https://johnmuchiri.com
 */
 
@@ -31,7 +31,7 @@ class ChurchSongBoard
             &$this,
             'updater',
         ]);
-        wp_enqueue_style('style-main', plugin_dir_url(__FILE__).'css/style.css', FALSE);
+        wp_enqueue_style('style-main', plugin_dir_url(__FILE__).'assets/css/style.css', FALSE);
 
         add_shortcode('mboard', [
             &$this,
